@@ -19,4 +19,14 @@ def line_gen(file):
         yield '\n'
 
 
+def blocks_gen(file):
+    text_block = []
+    for line in line_gen(file):
+        if line.strip():
+            text_block.append(line)
+        elif text_block:
+            yield ''.join(text_block).strip()
+            text_block = []
+
+
 
