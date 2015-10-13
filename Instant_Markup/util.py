@@ -13,5 +13,10 @@ def block(file):
     new_list = str.split('\n\n')
     return new_list
 
+def line_gen(file):
+    for line in file:
+        yield line
+        yield '\n'
+
 
 
