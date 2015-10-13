@@ -3,7 +3,7 @@ __author__ = 'Administrator'
 
 from util import *
 
-print '<html><head><title>...</title><body'
+print '<html><head><title>...</title><body>'
 
 title = True
 for block_element in blocks(sys.stdin):
