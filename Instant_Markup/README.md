@@ -58,7 +58,8 @@
 
 目前观察测试块与块之前都有一个空行，空行势必有换行符出现，因此初步考虑将行组合后，利用'\n\n'作为分隔符重新生成列表
 
-教程中则采用了行生成器与文件块生成器的方法。其中用到了yield
+教程中则采用了行生成器与文件块生成器的方法。其中用到了yield, 
+参考网站：http://pyzh.readthedocs.org/en/latest/the-python-yield-keyword-explained.html
 
 
 
