@@ -15,4 +15,3 @@ def block(file):
 
 
 
-print block('E:/Python/Beginning_Python/Instant_Markup/text_input.txt')
