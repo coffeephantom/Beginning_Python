@@ -9,7 +9,7 @@ print '<html><head><title>...</title><body>'
 title = True
 
 for text_block in blocks_gen(sys.stdin):
-    text_block = re.sub(r'\*(.+?)\*', r'<em>\l</em>', text_block)
+    text_block = re.sub(r'\*(.+?)\*', r'<em>\1</em>', text_block)
     if title:
         print '<h1>'
         print text_block
