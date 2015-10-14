@@ -60,6 +60,34 @@
 教程中则采用了行生成器与文件块生成器的方法。其中用到了yield, 也通过这个机会更加了解一下python中的生成器(参考网站： http://pyzh.readthedocs.org/en/latest/the-python-yield-keyword-explained.html ), 任何包含yield的函数称之为生成器, yield有点与return类似。但与return不同的是，yield返回一个迭代对象，函数内的代码并未马上执行。当使用for访问这个函数时，函数中的代码才被执行。yield会产生多个值， 每次产生一个值，函数就会暂停并等待下次激活。教程中的总结还是非常好的：
 > 生成器是一个包含yield关键字的函数，当它被调用时，在函数体中的代码不会被执行，而是会返回一个迭代器。每次请求一个值就会执行生成器中的代码直到遇到一个yield或者return语句。yield意味应该生成一个值， return意味着生成器停止（只有在生成器中可以进行无参调用）。
 
+可以帮助理解的代码：
+
+    simple_list = [1, 2, 3, 4, 5]
+
+    def gen_sec(l):
+        for index in range(len(l)):
+            yield l[index]
+
+    a = gen_sec(simple_list)
+
+    it = iter(a)
+
+    print "get by next method: %d" % (it.next())
+
+    print "get by next method: %d" % (it.next())
+
+
+    for i in a:
+        print "print by for: %d" % (i)
+
+运行结果：
+    
+    get by next method: 1
+    get by next method: 2
+    print by for: 3
+    print by for: 4
+    print by for: 5
+
 
 
 2.文本的标记
