@@ -22,5 +22,5 @@ def markup(file):
     return new_content
 
 if __name__ == '__main__':
-    markup('text_input.txt')
+    print markup('text_input.txt')
 
