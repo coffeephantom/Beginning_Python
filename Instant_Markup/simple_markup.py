@@ -21,6 +21,10 @@ def markup(file):
     new_content.append('</body></html>')
     return new_content
 
-if __name__ == '__main__':
-    print markup('text_input.txt')
 
+def output(content, file):
+    with open(file, 'w') as f:
+        f.writelines(content)
+
+if __name__ == '__main__':
+    output(markup('text_input.txt'), 'text.output2.html')
