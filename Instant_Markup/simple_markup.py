@@ -3,22 +3,23 @@ __author__ = 'Administrator'
 
 from util import *
 
-print '<html><head><title>...</title><body>'
 
 def markup(file):
+    new_content = ['<html><head><title>...</title><body>']
     title = True
     for block_element in block(file):
         block_element = re.sub(r'\*(.+?)\*', r'<em>\l</em>', block_element)
         if title:
-            print '<h1>'
-            print block_element
-            print '</h1>'
+            new_content.append('<h1>')
+            new_content.append(block_element)
+            new_content.append('</h1>')
             title = False
         else:
-            print '<p>'
-            print block_element
-            print '</p>'
-        print '</body></html>'
+            new_content.append('<p>')
+            new_content.append(block_element)
+            new_content.append('<p>')
+    new_content.append('</body></html>')
+    return new_content
 
 if __name__ == '__main__':
     markup('text_input.txt')
