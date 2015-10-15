@@ -12,5 +12,11 @@ class HTMLParser:
         print '</body></html>'
 
 
+    def start_title(self):
+        print '<h1>'
+
+
+    def end_title(self):
+        print '</h1>'
 
 
