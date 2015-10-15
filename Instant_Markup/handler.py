@@ -20,3 +20,9 @@ class HTMLParser:
         print '</h1>'
 
 
+    def start_em(self):
+        print '<em>'
+
+
+    def end_em(self):
+        print '</em>'
