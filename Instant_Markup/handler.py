@@ -5,7 +5,7 @@ import re
 __author__ = 'coffeephantom'
 
 
-class HTMLParser:
+class HTMLParser(Handler):
 
     def start_doc(self):
         print '<html><head><title>...</title></head><body>'
