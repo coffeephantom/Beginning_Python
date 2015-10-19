@@ -28,6 +28,12 @@ class HTMLParser(Handler):
     def end_paragraph(self):
         print '</p>'
 
+    def start_listitem(self):
+        print '<li>'
+
+    def end_listitem(self):
+        print '</li>'
+
 class Handler:
 
     def callback(self, prefix, name, *args):
