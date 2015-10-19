@@ -22,7 +22,7 @@ class TitleRule(HeadlineRule):
         self.first = False
         return HeadlineRule.condition(self, block)
 
-class ListItem(Rule):
+class ListItemRule(Rule):
     type = 'listitem'
 
     def condition(self, block):
