@@ -12,3 +12,22 @@ class HeadlineRule(Rlue):
         return not '\n' in block and len(block) <= 70 and not block[-1] == ':'
 
 
+class TitleRule(HeadlineRule):
+    type = 'titile'
+    first = True
+
+    def condition(self, block):
+        if not self.first:
+            return False
+        self.first = False
+        return HeadlineRule.condition(self, block)
+
+class ListItem(Rule):
+    type = 'listitem'
+
+    def condition(self, block):
+        return block[0] = '-'
+    def action(self, block, handler):
+        handler.start(self, type)
+        handler.feed(block[1:].strip())
+        handler.end(self, type)
