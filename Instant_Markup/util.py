@@ -7,7 +7,7 @@ def lines(file):
     return content_lines
 
 
-def block(file):
+def blocks(file):
     line_list = lines(file)
     str = ''.join(line_list)
     new_list = str.split('\n\n')
