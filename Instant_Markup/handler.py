@@ -34,6 +34,12 @@ class HTMLParser(Handler):
     def end_document(self):
         print '</body></html>'
 
+    def start_heading(self):
+        print '<h2>'
+
+    def end_heading(self):
+        print '</h2>'
+
     def start_title(self):
         print '<h1>'
 
