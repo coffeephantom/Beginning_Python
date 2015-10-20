@@ -16,6 +16,7 @@ data = [
 ]
 '''
 
+
 def get_data(url):
     url_content = urllib2.urlopen(url)
     data = url_content.read()
@@ -31,6 +32,7 @@ def pre_process_data(filename):
     with open(filename, 'rb') as f:
         data_li = f.readlines()
         return data_li
+
 
 def draw_pdf():
     d = Drawing(100, 100)
