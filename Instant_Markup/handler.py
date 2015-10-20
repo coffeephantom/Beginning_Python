@@ -28,10 +28,10 @@ class Handler:
 
 
 class HTMLParser(Handler):
-    def start_doc(self):
+    def start_document(self):
         print '<html><head><title>...</title></head><body>'
 
-    def end_doc(self):
+    def end_document(self):
         print '</body></html>'
 
     def start_title(self):
