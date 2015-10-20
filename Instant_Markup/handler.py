@@ -6,6 +6,7 @@ __author__ = 'coffeephantom'
 
 
 class Handler:
+
     def callback(self, prefix, name, *args):
         method = getattr(self, prefix + name, None)
         if callable(method):
@@ -28,6 +29,7 @@ class Handler:
 
 
 class HTMLParser(Handler):
+
     def start_document(self):
         print '<html><head><title>...</title></head><body>'
 
