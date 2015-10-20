@@ -7,7 +7,7 @@ from util import *
 def markup(file):
     new_content = ['<html><head><title>...</title><body>']
     title = True
-    for block_element in block(file):
+    for block_element in blocks(file):
         block_element = re.sub(r'\*(.+?)\*', r'<em>\1</em>', block_element)
         if title:
             new_content.append('<h1>')
