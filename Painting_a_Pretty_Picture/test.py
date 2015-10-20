@@ -13,7 +13,13 @@ def save_data(data, filename):
    with open(filename, 'wb') as f:
       f.write(data)
 
+def pre_process_data(filename):
+   with open(filename, 'rb') as f:
+      data_li = f.readlines()
+      return data_li
+
+
+
 
 if __name__ == '__main__':
-   data = get_data('ftp://ftp.swpc.noaa.gov/pub/weekly/Predict.txt')
-   save_data(data, 'data.txt')
+   print pre_process_data('data.txt')
