@@ -60,3 +60,6 @@ class HTMLParser(Handler):
 
     def end_list(self):
         print '</ul>'
+
+    def sub_url(self, match):
+        return '<a href = "%s">%s</a>' % (match.group(1), match.group(1))
