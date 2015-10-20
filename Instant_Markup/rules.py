@@ -7,7 +7,7 @@ class Rule:
         handler.end(self, type)
         return True
 
-class HeadlineRule(Rlue):
+class HeadlineRule(Rule):
     def condition(self, block):
         return not '\n' in block and len(block) <= 70 and not block[-1] == ':'
 
