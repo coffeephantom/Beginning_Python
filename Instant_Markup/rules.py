@@ -2,12 +2,13 @@ __author__ = 'coffeephantom'
 
 class Rule:
     def action(self, block, handler):
-        handler.start(self, type)
+        handler.start(self.type)
         handler.feed(block)
-        handler.end(self, type)
+        handler.end(self.type)
         return True
 
 class HeadlineRule(Rule):
+    type = 'heading'
     def condition(self, block):
         return not '\n' in block and len(block) <= 70 and not block[-1] == ':'
 
@@ -28,9 +29,9 @@ class ListItemRule(Rule):
     def condition(self, block):
         return block[0] == '-'
     def action(self, block, handler):
-        handler.start(self, type)
+        handler.start(self.type)
         handler.feed(block[1:].strip())
-        handler.end(self, type)
+        handler.end(self.type)
 
 
 class ListRule(ListItemRule):
@@ -41,10 +42,10 @@ class ListRule(ListItemRule):
 
     def action(self, block, handler):
         if not self.inside and ListItemRule.condition(self, block):
-            handler.start(self, type)
+            handler.start(self.type)
             self.inside = True
         elif self.inside and not ListItemRule.condition(self, block):
-            handler.end(self, type)
+            handler.end(self.type)
             self.inside = False
         return False
 
