@@ -7,9 +7,9 @@ from rules import *
 
 
 class Parser:
-    def __init__(self):
+    def __init__(self,handler):
         self.handler = handler
-        self.rule = rules
+        self.rules =[]
         self.filters = []
 
     def addRule(self, rule):
