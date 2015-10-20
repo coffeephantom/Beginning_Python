@@ -1,15 +1,17 @@
-__author__ = 'coffeephantom'
-
-import sys, re
+import sys
+import re
 from handler import *
 from util import *
 from rules import *
 
+__author__ = 'coffeephantom'
+
 
 class Parser:
-    def __init__(self,handler):
+
+    def __init__(self, handler):
         self.handler = handler
-        self.rules =[]
+        self.rules = []
         self.filters = []
 
     def addRule(self, rule):
@@ -46,10 +48,8 @@ class BasicTextParser(Parser):
 
         self.addFilter(r'\*(.+?)\*', 'emphasis')
         self.addFilter(r'(http://[\.a-zA-Z/]+)', 'url')
-        self.addFilter(r'[\.a-zA-Z]+@[\.a-zA-Z]+[a-zA-Z]+)', 'mail')
+        self.addFilter(r'([\.a-zA-Z]+@[\.a-zA-Z]+[a-zA-Z]+)', 'mail')
 
 handler = HTMLParser()
 parser = BasicTextParser(handler)
 parser.parse(sys.stdin)
-
-
