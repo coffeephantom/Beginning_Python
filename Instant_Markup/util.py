@@ -1,5 +1,6 @@
-#-*-coding:utf-8-*-
+# -*-coding:utf-8-*-
 __author__ = 'Administrator'
+
 
 def lines(file):
     with open(file) as f:
@@ -12,6 +13,7 @@ def blocks(file):
     str = ''.join(line_list)
     new_list = str.split('\n\n')
     return new_list
+
 
 def line_gen(file):
     for line in file:
@@ -27,6 +29,3 @@ def blocks_gen(file):
         elif text_block:
             yield ''.join(text_block).strip()
             text_block = []
-
-
-
