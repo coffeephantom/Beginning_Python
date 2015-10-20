@@ -48,5 +48,8 @@ class BasicTextParser(Parser):
         self.addFilter(r'(http://[\.a-zA-Z/]+)', 'url')
         self.addFilter(r'[\.a-zA-Z]+@[\.a-zA-Z]+[a-zA-Z]+)', 'mail')
 
+handler = HTMLParser()
+parser = BasicTextParser(handler)
+parser.parse(sys.stdin)
 
 
