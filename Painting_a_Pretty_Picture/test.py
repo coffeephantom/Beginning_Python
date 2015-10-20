@@ -32,10 +32,13 @@ def pre_process_data(filename):
         data_li = f.readlines()
         return data_li
 
-
-if __name__ == '__main__':
-    print pre_process_data('data.txt')
+def draw_pdf():
     d = Drawing(100, 100)
     s = String(50, 50, 'Hello World', textAnchor='middle')
     d.add(s)
     renderPDF.drawToFile(d, 'hello.pdf', 'A simple pdf file.')
+
+
+if __name__ == '__main__':
+    print pre_process_data('data.txt')
+    draw_pdf()
