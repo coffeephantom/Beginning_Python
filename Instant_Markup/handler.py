@@ -4,10 +4,10 @@ import re
 
 __author__ = 'coffeephantom'
 
-class Handler:
 
+class Handler:
     def callback(self, prefix, name, *args):
-        method = getattr(self, prefix+name, None)
+        method = getattr(self, prefix + name, None)
         if callable(method):
             return method(*args)
 
@@ -17,18 +17,17 @@ class Handler:
     def end(self, name):
         self.callback('end_', name)
 
-
     def sub(self, name):
         def substitution(match):
             result = self.callback('sub_', name, match)
             if result is None:
                 match.group(0)
             return result
+
         return substitution
 
 
 class HTMLParser(Handler):
-
     def start_doc(self):
         print '<html><head><title>...</title></head><body>'
 
@@ -61,6 +60,3 @@ class HTMLParser(Handler):
 
     def end_list(self):
         print '</ul>'
-
-
-
