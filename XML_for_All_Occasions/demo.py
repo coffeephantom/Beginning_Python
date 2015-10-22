@@ -33,4 +33,8 @@ class HeadlineHandler(ContentHandler):
 
 
 if __name__ == '__main__':
-    parse('website.xml', TestHandler())
+    headlines = []
+    parse('website.xml',HeadlineHandler(headlines))
+    print 'The following <h1> elements was found'
+    for h in headlines:
+        print h
