@@ -12,7 +12,7 @@ class TestHandler(ContentHandler):
 class HeadlineHandler(ContentHandler):
     in_headline = False
     def __init__(self, headlines):
-        ContentHandler.__init__()
+        ContentHandler.__init__(self)
         self.headlines = headlines
         self.data = []
 
