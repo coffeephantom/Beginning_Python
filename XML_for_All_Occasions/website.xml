@@ -11,7 +11,7 @@
         </ul>
     </page>
     <directory name="interests">
-        <page> name="shouting" title="Shouting">
+        <page name="shouting" title="Shouting">
             <h1>Mr. Gumby's Shouting Page</h1>
             <p>...</p>
         </page>
