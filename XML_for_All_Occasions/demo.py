@@ -5,12 +5,14 @@ __author__ = 'coffeephantom'
 
 
 class TestHandler(ContentHandler):
+
     def startElement(self, name, attrs):
         print name, attrs.keys()
 
 
 class HeadlineHandler(ContentHandler):
     in_headline = False
+
     def __init__(self, headlines):
         ContentHandler.__init__(self)
         self.headlines = headlines
@@ -34,7 +36,7 @@ class HeadlineHandler(ContentHandler):
 
 if __name__ == '__main__':
     headlines = []
-    parse('website.xml',HeadlineHandler(headlines))
+    parse('website.xml', HeadlineHandler(headlines))
     print 'The following <h1> elements was found'
     for h in headlines:
         print h
